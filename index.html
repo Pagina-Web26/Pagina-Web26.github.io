@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hábitos de programación en el desempeño de las asignaturas de Ingeniería en Sistemas</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #1f2937; background: #f3f5fb; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Menú */
+    .menu { position: sticky; top: 0; z-index: 10; background: #0f172a; display: flex; justify-content: space-between; align-items: center; padding: 14px 6%; flex-wrap: wrap; gap: 10px; }
+    .menu .logo { color: #38bdf8; font-weight: 700; font-size: 1.1rem; }
+    .menu nav a { color: #e2e8f0; margin-left: 18px; font-size: .95rem; }
+    .menu nav a:hover { color: #38bdf8; }
+
+    /* Portada */
+    .hero { background: linear-gradient(135deg, #0f172a, #1d4ed8); color: #fff; text-align: center; padding: 90px 6%; }
+    .hero h1 { font-size: 2.3rem; margin: 0 0 15px; line-height: 1.25; }
+    .hero p { max-width: 700px; margin: 0 auto 25px; opacity: .92; }
+    .hero code { display: inline-block; background: rgba(0,0,0,.35); padding: 8px 16px; border-radius: 8px; color: #7dd3fc; font-family: Consolas, monospace; }
+    .boton { display: inline-block; margin-top: 25px; background: #38bdf8; color: #0f172a; padding: 12px 28px; border-radius: 30px; font-weight: 700; }
+    .boton:hover { background: #7dd3fc; }
+
+    /* Secciones */
+    section { padding: 60px 6%; max-width: 1100px; margin: auto; }
+    h2 { color: #1e3a8a; font-size: 1.8rem; margin: 0 0 10px; }
+    .sub { color: #6b7280; margin-bottom: 30px; }
+
+    .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .tarjeta { background: #fff; border-radius: 14px; padding: 24px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,.05); transition: transform .2s; }
+    .tarjeta:hover { transform: translateY(-5px); }
+    .tarjeta .icono { font-size: 2rem; }
+    .tarjeta h3 { margin: 10px 0 6px; color: #1d4ed8; }
+    .tarjeta p { margin: 0; font-size: .95rem; }
+
+    /* Barras */
+    .barra { margin-bottom: 18px; }
+    .barra span { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 5px; }
+    .fondo { background: #dbe3f5; border-radius: 20px; height: 14px; overflow: hidden; }
+    .nivel { background: linear-gradient(90deg, #38bdf8, #1d4ed8); height: 100%; border-radius: 20px; }
+
+    /* Evaluación */
+    .evaluar { background: #fff; border-radius: 14px; padding: 28px; border: 1px solid #e5e7eb; }
+    .evaluar label { display: block; padding: 10px 12px; border-radius: 8px; cursor: pointer; }
+    .evaluar label:hover { background: #eef2ff; }
+    .evaluar input { margin-right: 10px; transform: scale(1.2); }
+    .evaluar button { margin-top: 15px; background: #1d4ed8; color: #fff; border: 0; padding: 12px 26px; border-radius: 30px; font-size: 1rem; cursor: pointer; }
+    .evaluar button:hover { background: #1e3a8a; }
+    #resultado { margin-top: 18px; padding: 15px; border-radius: 10px; background: #eef2ff; display: none; font-weight: 600; }
+
+    /* Tabla */
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+    th, td { padding: 14px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    th { background: #1d4ed8; color: #fff; }
+    .tabla-scroll { overflow-x: auto; }
+
+    footer { background: #0f172a; color: #cbd5e1; text-align: center; padding: 30px 6%; margin-top: 40px; }
+    footer strong { color: #38bdf8; }
+  </style>
+</head>
+<body>
+
+  <!-- MENÚ -->
+  <header class="menu">
+    <div class="logo">&lt;/&gt; Hábitos de Programación</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#habitos">Hábitos</a>
+      <a href="#desempeno">Desempeño</a>
+      <a href="#evaluacion">Evalúate</a>
+      <a href="#consejos">Consejos</a>
+    </nav>
+  </header>
+
+  <!-- PORTADA -->
+  <div class="hero" id="inicio">
+    <h1>Hábitos de programación en el desempeño de las asignaturas de Ingeniería en Sistemas</h1>
+    <p>Descubre cómo la forma en que practicas, organizas y revisas tu código influye en tus notas, en tus proyectos y en tu futuro profesional.</p>
+    <code>while (estudias) { practicas(); mejoras(); }</code><br>
+    <a class="boton" href="#habitos">Conocer los hábitos</a>
+  </div>
+
+  <!-- HÁBITOS -->
+  <section id="habitos">
+    <h2>Los hábitos clave</h2>
+    <p class="sub">Seis prácticas que marcan la diferencia en asignaturas como Programación, Estructuras de Datos, Bases de Datos y Algoritmos.</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><div class="icono">⌨️</div><h3>Practicar a diario</h3><p>Programar un poco cada día fortalece la lógica y la sintaxis mucho más que estudiar solo antes del examen.</p></div>
+      <div class="tarjeta"><div class="icono">🧠</div><h3>Planificar primero</h3><p>Usar diagramas de flujo o pseudocódigo antes de escribir código evita errores y ahorra tiempo.</p></div>
+      <div class="tarjeta"><div class="icono">🧹</div><h3>Código limpio</h3><p>Nombres claros, buena sangría y comentarios útiles hacen que los programas sean fáciles de entender.</p></div>
+      <div class="tarjeta"><div class="icono">🐞</div><h3>Depurar y probar</h3><p>Probar cada parte del programa y corregir los errores con calma mejora la calidad de los proyectos.</p></div>
+      <div class="tarjeta"><div class="icono">🔀</div><h3>Control de versiones</h3><p>Usar Git y GitHub permite guardar el avance, recuperar versiones y trabajar mejor en equipo.</p></div>
+      <div class="tarjeta"><div class="icono">🤝</div><h3>Aprender en equipo</h3><p>Compartir dudas y revisar el código de otros compañeros acelera el aprendizaje.</p></div>
+    </div>
+  </section>
+
+  <!-- DESEMPEÑO -->
+  <section id="desempeno">
+    <h2>¿Cómo influyen en el desempeño?</h2>
+    <p class="sub">Nivel de impacto que suelen tener los hábitos en el rendimiento de las asignaturas (valores de ejemplo ilustrativos).</p>
+
+    <div class="barra"><span>Práctica constante <b>90%</b></span><div class="fondo"><div class="nivel" style="width:90%"></div></div></div>
+    <div class="barra"><span>Planificación previa <b>80%</b></span><div class="fondo"><div class="nivel" style="width:80%"></div></div></div>
+    <div class="barra"><span>Depuración y pruebas <b>75%</b></span><div class="fondo"><div class="nivel" style="width:75%"></div></div></div>
+    <div class="barra"><span>Código limpio <b>70%</b></span><div class="fondo"><div class="nivel" style="width:70%"></div></div></div>
+    <div class="barra"><span>Trabajo en equipo <b>65%</b></span><div class="fondo"><div class="nivel" style="width:65%"></div></div></div>
+
+    <h3 style="margin-top:40px;color:#1e3a8a">Hábitos y su efecto en las asignaturas</h3>
+    <div class="tabla-scroll">
+      <table>
+        <tr><th>Asignatura</th><th>Hábito más útil</th><th>Resultado esperado</th></tr>
+        <tr><td>Programación</td><td>Práctica diaria</td><td>Mayor dominio de la lógica</td></tr>
+        <tr><td>Estructuras de datos</td><td>Planificar y probar</td><td>Menos errores en los algoritmos</td></tr>
+        <tr><td>Bases de datos</td><td>Código ordenado</td><td>Consultas claras y eficientes</td></tr>
+        <tr><td>Ingeniería de software</td><td>Control de versiones y equipo</td><td>Proyectos mejor organizados</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- EVALUACIÓN -->
+  <section id="evaluacion">
+    <h2>Evalúa tus hábitos</h2>
+    <p class="sub">Marca los hábitos que sí practicas y mira tu resultado.</p>
+    <div class="evaluar">
+      <label><input type="checkbox"> Programo varios días a la semana</label>
+      <label><input type="checkbox"> Planifico mi solución antes de escribir código</label>
+      <label><input type="checkbox"> Escribo código ordenado y con comentarios</label>
+      <label><input type="checkbox"> Pruebo mi programa y corrijo los errores</label>
+      <label><input type="checkbox"> Uso Git o algún control de versiones</label>
+      <label><input type="checkbox"> Estudio y practico con mis compañeros</label>
+      <button onclick="calcular()">Ver mi resultado</button>
+      <div id="resultado"></div>
+    </div>
+  </section>
+
+  <!-- CONSEJOS -->
+  <section id="consejos">
+    <h2>Consejos para mejorar</h2>
+    <p class="sub">Pequeños cambios que mejoran tu rendimiento.</p>
+    <div class="tarjetas">
+      <div class="tarjeta"><h3>1. Crea un horario</h3><p>Reserva un tiempo fijo cada día para practicar código.</p></div>
+      <div class="tarjeta"><h3>2. Haz proyectos propios</h3><p>Aplica lo que aprendes en pequeños programas personales.</p></div>
+      <div class="tarjeta"><h3>3. Pide revisiones</h3><p>Muestra tu código a otros y aprende de sus observaciones.</p></div>
+      <div class="tarjeta"><h3>4. Descansa bien</h3><p>Dormir y descansar mejora la concentración y reduce errores.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Hábitos de programación en el desempeño de las asignaturas de Ingeniería en Sistemas</strong></p>
+    <p>Integrantes: Alicia Joseph Izaguirre Palacios · Angel Rafael Martínez Pérez . Neyzer Rusbell Castellon Osorno</p>
+  </footer>
+
+  <script>
+    function calcular() {
+      var marcados = document.querySelectorAll('.evaluar input:checked').length;
+      var caja = document.getElementById('resultado');
+      var texto;
+      if (marcados <= 2) texto = 'Tienes pocos hábitos todavía. Empieza practicando un poco cada día. 💪';
+      else if (marcados <= 4) texto = 'Vas por buen camino. Fortalece los hábitos que te faltan. 👍';
+      else texto = '¡Excelente! Tienes muy buenos hábitos de programación. 🚀';
+      caja.textContent = 'Practicas ' + marcados + ' de 6 hábitos. ' + texto;
+      caja.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
